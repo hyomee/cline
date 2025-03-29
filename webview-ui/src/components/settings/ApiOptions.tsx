@@ -1277,15 +1277,16 @@ const ApiOptions = ({ showModelOptions, apiErrorMessage, modelIdErrorMessage, is
 							marginTop: "5px",
 							color: "var(--vscode-descriptionForeground)",
 						}}>
-						Ollama를 사용하면 컴퓨터에서 로컬로 모델을 실행할 수 있습니다. 시작하는 방법에 대한 지침은 다음을 참조하세요, see
-						their
+						Ollama를 사용하면 컴퓨터에서 로컬로 모델을 실행할 수 있습니다. 시작하는 방법에 대한 지침은 다음을
+						참조하세요, see their
 						<VSCodeLink
 							href="https://github.com/ollama/ollama/blob/main/README.md"
 							style={{ display: "inline", fontSize: "inherit" }}>
-							quickstart guide. 
+							quickstart guide.
 						</VSCodeLink>
 						<span style={{ color: "var(--vscode-errorForeground)" }}>
-							(<span style={{ fontWeight: 500 }}>Note:</span> 오픈 모델을 사용해야 하지만 로컬(ollama)는 무료로 유료 모델을 사용 할 때 보다 덜 정혹합니다. 개발자들은 로컬에서 모델을 실행할 수 있습니다.)
+							(<span style={{ fontWeight: 500 }}>Note:</span> 오픈 모델을 사용해야 하지만 로컬(ollama)는 무료로 유료
+							모델을 사용 할 때 보다 덜 정혹합니다. 개발자들은 로컬에서 모델을 실행할 수 있습니다.)
 						</span>
 					</p>
 				</div>

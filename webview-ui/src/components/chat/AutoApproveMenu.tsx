@@ -217,7 +217,8 @@ const AutoApproveMenu = ({ style }: AutoApproveMenuProps) => {
 							color: getAsVar(VSC_DESCRIPTION_FOREGROUND),
 							fontSize: "12px",
 						}}>
-						자동 승인 기능을 사용하면 Cline이 사용자 허가 없이 다음 작업을 수행할 수 있습니다. 위험을 이해하고 신중히 활성화하시기 바랍니다.
+						자동 승인 기능을 사용하면 Cline이 사용자 허가 없이 다음 작업을 수행할 수 있습니다. 위험을 이해하고 신중히
+						활성화하시기 바랍니다.
 					</div>
 					{ACTION_METADATA.map((action) => (
 						<div key={action.id} style={{ margin: "6px 0" }}>

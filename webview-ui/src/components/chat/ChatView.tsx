@@ -813,7 +813,10 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 							<VSCodeLink href="https://www.anthropic.com/claude/sonnet" style={{ display: "inline" }}>
 								Claude 3.7 Sonnet's
 							</VSCodeLink>
-							agentic coding capabilities, 저는 복잡한 소프트웨어 개발 작업을 단계별로 처리할 수 있습니다. 파일을 만들고 편집하고, 복잡한 프로젝트를 탐색하고, 브라우저를 사용하고, 터미널 명령을 실행할 수 있는 도구(귀하가 권한을 부여한 후)를 사용하여 코드 완성이나 기술 지원을 넘어서는 방식으로 귀하를 도울 수 있습니다. 심지어 MCP를 사용하여 새로운 도구를 만들고 제 역량을 확장할 수도 있습니다.
+							agentic coding capabilities, 저는 복잡한 소프트웨어 개발 작업을 단계별로 처리할 수 있습니다. 파일을
+							만들고 편집하고, 복잡한 프로젝트를 탐색하고, 브라우저를 사용하고, 터미널 명령을 실행할 수 있는
+							도구(귀하가 권한을 부여한 후)를 사용하여 코드 완성이나 기술 지원을 넘어서는 방식으로 귀하를 도울 수
+							있습니다. 심지어 MCP를 사용하여 새로운 도구를 만들고 제 역량을 확장할 수도 있습니다.
 						</p>
 					</div>
 					{taskHistory.length > 0 && <HistoryPreview showHistoryView={showHistoryView} />}

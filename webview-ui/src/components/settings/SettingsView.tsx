@@ -245,8 +245,8 @@ const SettingsView = ({ onDone }: SettingsViewProps) => {
 							marginTop: "5px",
 							color: "var(--vscode-descriptionForeground)",
 						}}>
-						Plan과 Act 모드를 전환하면 이전 모드에서 사용된 API와 모델이 유지됩니다. 이는
-						예를 들어 강력한 추론 모델을 사용하여 더 저렴한 코딩 모델에 대한 계획을 설계할 때 유용할 수 있습니다.
+						Plan과 Act 모드를 전환하면 이전 모드에서 사용된 API와 모델이 유지됩니다. 이는 예를 들어 강력한 추론 모델을
+						사용하여 더 저렴한 코딩 모델에 대한 계획을 설계할 때 유용할 수 있습니다.
 					</p>
 				</div>
 
@@ -266,7 +266,8 @@ const SettingsView = ({ onDone }: SettingsViewProps) => {
 							marginTop: "5px",
 							color: "var(--vscode-descriptionForeground)",
 						}}>
-						익명 사용 데이터 및 오류 보고서를 전송하여 Cline 개선에 도움을 주세요. 코드, 프롬프트 또는 개인 정보는 절대 전송되지 않습니다. 자세한 내용은{" "}
+						익명 사용 데이터 및 오류 보고서를 전송하여 Cline 개선에 도움을 주세요. 코드, 프롬프트 또는 개인 정보는
+						절대 전송되지 않습니다. 자세한 내용은{" "}
 						<VSCodeLink href="https://docs.cline.bot/more-info/telemetry" style={{ fontSize: "inherit" }}>
 							텔레메트리 개요
 						</VSCodeLink>{" "}
