@@ -151,8 +151,7 @@ export const ClineAccountView = () => {
 					<ClineLogoWhite className="size-16 mb-4" />
 
 					<p style={{}}>
-						Sign up for an account to get access to the latest models, billing dashboard to view usage and credits,
-						and more upcoming features.
+						계정을 등록하여 최신 모델, 사용량 및 크레딧을 확인할 수 있는 대시보드, 그리고 앞으로 추가될 다양한 기능을 이용해보세요.
 					</p>
 
 					<VSCodeButton onClick={handleLogin} className="w-full mb-4">

@@ -18,6 +18,7 @@ import { combineCommandSequences } from "../../../../src/shared/combineCommandSe
 import { getApiMetrics } from "../../../../src/shared/getApiMetrics"
 import { useExtensionState } from "../../context/ExtensionStateContext"
 import { vscode } from "../../utils/vscode"
+import TelemetryBanner from "../common/TelemetryBanner"
 import HistoryPreview from "../history/HistoryPreview"
 import { normalizeApiConfiguration } from "../settings/ApiOptions"
 import Announcement from "./Announcement"
@@ -26,7 +27,6 @@ import BrowserSessionRow from "./BrowserSessionRow"
 import ChatRow from "./ChatRow"
 import ChatTextArea from "./ChatTextArea"
 import TaskHeader from "./TaskHeader"
-import TelemetryBanner from "../common/TelemetryBanner"
 
 interface ChatViewProps {
 	isHidden: boolean
@@ -807,16 +807,13 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 					{showAnnouncement && <Announcement version={version} hideAnnouncement={hideAnnouncement} />}
 
 					<div style={{ padding: "0 20px", flexShrink: 0 }}>
-						<h2>What can I do for you?</h2>
+						<h2>무엇을 도와드릴까요?</h2>
 						<p>
 							Thanks to{" "}
 							<VSCodeLink href="https://www.anthropic.com/claude/sonnet" style={{ display: "inline" }}>
 								Claude 3.7 Sonnet's
 							</VSCodeLink>
-							agentic coding capabilities, I can handle complex software development tasks step-by-step. With tools
-							that let me create & edit files, explore complex projects, use a browser, and execute terminal
-							commands (after you grant permission), I can assist you in ways that go beyond code completion or tech
-							support. I can even use MCP to create new tools and extend my own capabilities.
+							agentic coding capabilities, 저는 복잡한 소프트웨어 개발 작업을 단계별로 처리할 수 있습니다. 파일을 만들고 편집하고, 복잡한 프로젝트를 탐색하고, 브라우저를 사용하고, 터미널 명령을 실행할 수 있는 도구(귀하가 권한을 부여한 후)를 사용하여 코드 완성이나 기술 지원을 넘어서는 방식으로 귀하를 도울 수 있습니다. 심지어 MCP를 사용하여 새로운 도구를 만들고 제 역량을 확장할 수도 있습니다.
 						</p>
 					</div>
 					{taskHistory.length > 0 && <HistoryPreview showHistoryView={showHistoryView} />}

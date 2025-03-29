@@ -8,7 +8,6 @@ import {
 	VSCodeTextField,
 } from "@vscode/webview-ui-toolkit/react"
 import { Fragment, memo, useCallback, useEffect, useMemo, useState } from "react"
-import ThinkingBudgetSlider from "./ThinkingBudgetSlider"
 import { useEvent, useInterval } from "react-use"
 import styled from "styled-components"
 import * as vscodemodels from "vscode"
@@ -17,6 +16,9 @@ import {
 	anthropicModels,
 	ApiConfiguration,
 	ApiProvider,
+	askSageDefaultModelId,
+	askSageDefaultURL,
+	askSageModels,
 	azureOpenAiDefaultApiVersion,
 	bedrockDefaultModelId,
 	bedrockModels,
@@ -24,6 +26,10 @@ import {
 	deepSeekModels,
 	geminiDefaultModelId,
 	geminiModels,
+	internationalQwenDefaultModelId,
+	internationalQwenModels,
+	mainlandQwenDefaultModelId,
+	mainlandQwenModels,
 	mistralDefaultModelId,
 	mistralModels,
 	ModelInfo,
@@ -32,27 +38,21 @@ import {
 	openAiNativeModels,
 	openRouterDefaultModelId,
 	openRouterDefaultModelInfo,
-	mainlandQwenModels,
-	internationalQwenModels,
-	mainlandQwenDefaultModelId,
-	internationalQwenDefaultModelId,
+	sambanovaDefaultModelId,
+	sambanovaModels,
 	vertexDefaultModelId,
 	vertexModels,
-	askSageModels,
-	askSageDefaultModelId,
-	askSageDefaultURL,
 	xaiDefaultModelId,
 	xaiModels,
-	sambanovaModels,
-	sambanovaDefaultModelId,
 } from "../../../../src/shared/api"
 import { ExtensionMessage } from "../../../../src/shared/ExtensionMessage"
 import { useExtensionState } from "../../context/ExtensionStateContext"
 import { vscode } from "../../utils/vscode"
 import { getAsVar, VSC_DESCRIPTION_FOREGROUND } from "../../utils/vscStyles"
 import VSCodeButtonLink from "../common/VSCodeButtonLink"
-import OpenRouterModelPicker, { ModelDescriptionMarkdown, OPENROUTER_MODEL_PICKER_Z_INDEX } from "./OpenRouterModelPicker"
 import { ClineAccountInfoCard } from "./ClineAccountInfoCard"
+import OpenRouterModelPicker, { ModelDescriptionMarkdown, OPENROUTER_MODEL_PICKER_Z_INDEX } from "./OpenRouterModelPicker"
+import ThinkingBudgetSlider from "./ThinkingBudgetSlider"
 
 interface ApiOptionsProps {
 	showModelOptions: boolean
@@ -192,7 +192,11 @@ const ApiOptions = ({ showModelOptions, apiErrorMessage, modelIdErrorMessage, is
 						minWidth: 130,
 						position: "relative",
 					}}>
-					<VSCodeOption value="cline">Cline</VSCodeOption>
+					<VSCodeOption value="ollama">Ollama</VSCodeOption>
+					<VSCodeOption value="openai">OpenAI Compatible</VSCodeOption>
+					<VSCodeOption value="openai-native">OpenAI</VSCodeOption>
+					<VSCodeOption value="vscode-lm">VS Code LM API</VSCodeOption>
+					{/* <VSCodeOption value="cline">Cline</VSCodeOption>
 					<VSCodeOption value="openrouter">OpenRouter</VSCodeOption>
 					<VSCodeOption value="anthropic">Anthropic</VSCodeOption>
 					<VSCodeOption value="bedrock">AWS Bedrock</VSCodeOption>
@@ -211,7 +215,7 @@ const ApiOptions = ({ showModelOptions, apiErrorMessage, modelIdErrorMessage, is
 					<VSCodeOption value="litellm">LiteLLM</VSCodeOption>
 					<VSCodeOption value="asksage">AskSage</VSCodeOption>
 					<VSCodeOption value="xai">X AI</VSCodeOption>
-					<VSCodeOption value="sambanova">SambaNova</VSCodeOption>
+					<VSCodeOption value="sambanova">SambaNova</VSCodeOption> */}
 				</VSCodeDropdown>
 			</DropdownContainer>
 
@@ -1273,16 +1277,15 @@ const ApiOptions = ({ showModelOptions, apiErrorMessage, modelIdErrorMessage, is
 							marginTop: "5px",
 							color: "var(--vscode-descriptionForeground)",
 						}}>
-						Ollama allows you to run models locally on your computer. For instructions on how to get started, see
+						Ollama를 사용하면 컴퓨터에서 로컬로 모델을 실행할 수 있습니다. 시작하는 방법에 대한 지침은 다음을 참조하세요, see
 						their
 						<VSCodeLink
 							href="https://github.com/ollama/ollama/blob/main/README.md"
 							style={{ display: "inline", fontSize: "inherit" }}>
-							quickstart guide.
+							quickstart guide. 
 						</VSCodeLink>
 						<span style={{ color: "var(--vscode-errorForeground)" }}>
-							(<span style={{ fontWeight: 500 }}>Note:</span> Cline uses complex prompts and works best with Claude
-							models. Less capable models may not work as expected.)
+							(<span style={{ fontWeight: 500 }}>Note:</span> 오픈 모델을 사용해야 하지만 로컬(ollama)는 무료로 유료 모델을 사용 할 때 보다 덜 정혹합니다. 개발자들은 로컬에서 모델을 실행할 수 있습니다.)
 						</span>
 					</p>
 				</div>

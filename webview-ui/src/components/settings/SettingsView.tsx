@@ -217,7 +217,7 @@ const SettingsView = ({ onDone }: SettingsViewProps) => {
 						rows={4}
 						placeholder={'e.g. "Run unit tests at the end", "Use TypeScript with async/await", "Speak in Spanish"'}
 						onInput={(e: any) => setCustomInstructions(e.target?.value ?? "")}>
-						<span style={{ fontWeight: "500" }}>Custom Instructions</span>
+						<span style={{ fontWeight: "500" }}>사용자 정의 지침</span>
 					</VSCodeTextArea>
 					<p
 						style={{
@@ -225,7 +225,7 @@ const SettingsView = ({ onDone }: SettingsViewProps) => {
 							marginTop: "5px",
 							color: "var(--vscode-descriptionForeground)",
 						}}>
-						These instructions are added to the end of the system prompt sent with every request.
+						이러한 지침은 모든 요청과 함께 전송되는 시스템 프롬프트의 끝에 추가됩니다.
 					</p>
 				</div>
 
@@ -237,7 +237,7 @@ const SettingsView = ({ onDone }: SettingsViewProps) => {
 							const checked = e.target.checked === true
 							setPlanActSeparateModelsSetting(checked)
 						}}>
-						Use different models for Plan and Act modes
+						Plan 모드와 Act 모드에 대해 다른 모델 사용
 					</VSCodeCheckbox>
 					<p
 						style={{
@@ -245,8 +245,8 @@ const SettingsView = ({ onDone }: SettingsViewProps) => {
 							marginTop: "5px",
 							color: "var(--vscode-descriptionForeground)",
 						}}>
-						Switching between Plan and Act mode will persist the API and model used in the previous mode. This may be
-						helpful e.g. when using a strong reasoning model to architect a plan for a cheaper coding model to act on.
+						Plan과 Act 모드를 전환하면 이전 모드에서 사용된 API와 모델이 유지됩니다. 이는
+						예를 들어 강력한 추론 모델을 사용하여 더 저렴한 코딩 모델에 대한 계획을 설계할 때 유용할 수 있습니다.
 					</p>
 				</div>
 
@@ -258,7 +258,7 @@ const SettingsView = ({ onDone }: SettingsViewProps) => {
 							const checked = e.target.checked === true
 							setTelemetrySetting(checked ? "enabled" : "disabled")
 						}}>
-						Allow anonymous error and usage reporting
+						익명 오류 및 사용 보고 허용
 					</VSCodeCheckbox>
 					<p
 						style={{
@@ -266,16 +266,15 @@ const SettingsView = ({ onDone }: SettingsViewProps) => {
 							marginTop: "5px",
 							color: "var(--vscode-descriptionForeground)",
 						}}>
-						Help improve Cline by sending anonymous usage data and error reports. No code, prompts, or personal
-						information are ever sent. See our{" "}
+						익명 사용 데이터 및 오류 보고서를 전송하여 Cline 개선에 도움을 주세요. 코드, 프롬프트 또는 개인 정보는 절대 전송되지 않습니다. 자세한 내용은{" "}
 						<VSCodeLink href="https://docs.cline.bot/more-info/telemetry" style={{ fontSize: "inherit" }}>
-							telemetry overview
+							텔레메트리 개요
 						</VSCodeLink>{" "}
-						and{" "}
+						및{" "}
 						<VSCodeLink href="https://cline.bot/privacy" style={{ fontSize: "inherit" }}>
-							privacy policy
+							개인정보 보호정책
 						</VSCodeLink>{" "}
-						for more details.
+						를 참조하세요.
 					</p>
 				</div>
 
@@ -291,7 +290,7 @@ const SettingsView = ({ onDone }: SettingsViewProps) => {
 								marginTop: "5px",
 								color: "var(--vscode-descriptionForeground)",
 							}}>
-							This will reset all global state and secret storage in the extension.
+							이 작업은 확장 프로그램의 모든 전역 상태와 비밀 저장소를 초기화합니다.
 						</p>
 					</>
 				)}

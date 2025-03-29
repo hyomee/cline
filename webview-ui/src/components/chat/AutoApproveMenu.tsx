@@ -18,34 +18,34 @@ const ACTION_METADATA: {
 }[] = [
 	{
 		id: "readFiles",
-		label: "Read files and directories",
-		shortName: "Read",
-		description: "Allows access to read any file on your computer.",
+		label: "파일 및 디렉토리 읽기",
+		shortName: "읽기",
+		description: "컴퓨터의 모든 파일에 대한 읽기 접근을 허용합니다.",
 	},
 	{
 		id: "editFiles",
-		label: "Edit files",
-		shortName: "Edit",
-		description: "Allows modification of any files on your computer.",
+		label: "파일 수정",
+		shortName: "수정",
+		description: "컴퓨터의 모든 파일을 수정할 수 있도록 허용합니다.",
 	},
 	{
 		id: "executeCommands",
-		label: "Execute safe commands",
-		shortName: "Commands",
+		label: "안전한 명령 실행",
+		shortName: "명령",
 		description:
-			"Allows execution of safe terminal commands. If the model determines a command is potentially destructive, it will still require approval.",
+			"안전한 터미널 명령 실행을 허용합니다. 모델이 명령이 잠재적으로 파괴적이라고 판단하면 여전히 승인이 필요합니다.",
 	},
 	{
 		id: "useBrowser",
-		label: "Use the browser",
-		shortName: "Browser",
-		description: "Allows ability to launch and interact with any website in a headless browser.",
+		label: "브라우저 사용",
+		shortName: "브라우저",
+		description: "헤드리스 브라우저에서 모든 웹사이트를 실행하고 상호작용할 수 있는 기능을 허용합니다.",
 	},
 	{
 		id: "useMcp",
-		label: "Use MCP servers",
+		label: "MCP 서버 사용",
 		shortName: "MCP",
-		description: "Allows use of configured MCP servers which may modify filesystem or interact with APIs.",
+		description: "파일 시스템을 수정하거나 API와 상호작용할 수 있는 구성된 MCP 서버 사용을 허용합니다.",
 	},
 ]
 
@@ -190,7 +190,7 @@ const AutoApproveMenu = ({ style }: AutoApproveMenuProps) => {
 							color: getAsVar(VSC_FOREGROUND),
 							whiteSpace: "nowrap",
 						}}>
-						Auto-approve:
+						자동 승인:
 					</span>
 					<span
 						style={{
@@ -217,8 +217,7 @@ const AutoApproveMenu = ({ style }: AutoApproveMenuProps) => {
 							color: getAsVar(VSC_DESCRIPTION_FOREGROUND),
 							fontSize: "12px",
 						}}>
-						Auto-approve allows Cline to perform the following actions without asking for permission. Please use with
-						caution and only enable if you understand the risks.
+						자동 승인 기능을 사용하면 Cline이 사용자 허가 없이 다음 작업을 수행할 수 있습니다. 위험을 이해하고 신중히 활성화하시기 바랍니다.
 					</div>
 					{ACTION_METADATA.map((action) => (
 						<div key={action.id} style={{ margin: "6px 0" }}>
@@ -285,7 +284,7 @@ const AutoApproveMenu = ({ style }: AutoApproveMenuProps) => {
 							fontSize: "12px",
 							marginBottom: "10px",
 						}}>
-						Cline will automatically make this many API requests before asking for approval to proceed with the task.
+						Cline은 작업을 계속 진행하기 전에 승인 요청을 하기 위해 이 수만큼의 API 요청을 자동으로 수행합니다.
 					</div>
 					<div style={{ margin: "6px 0" }}>
 						<VSCodeCheckbox
@@ -294,7 +293,7 @@ const AutoApproveMenu = ({ style }: AutoApproveMenuProps) => {
 								const checked = (e.target as HTMLInputElement).checked
 								updateNotifications(checked)
 							}}>
-							Enable Notifications
+							알림 활성화
 						</VSCodeCheckbox>
 						<div
 							style={{
@@ -302,7 +301,7 @@ const AutoApproveMenu = ({ style }: AutoApproveMenuProps) => {
 								color: getAsVar(VSC_DESCRIPTION_FOREGROUND),
 								fontSize: "12px",
 							}}>
-							Receive system notifications when Cline requires approval to proceed or when a task is completed.
+							Cline이 진행을 위해 승인이 필요하거나 작업이 완료되었을 때 시스템 알림을 수신합니다.
 						</div>
 					</div>
 				</div>

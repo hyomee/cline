@@ -98,19 +98,16 @@ const McpView = ({ onDone }: McpViewProps) => {
 									marginBottom: "16px",
 									marginTop: "5px",
 								}}>
-								The{" "}
 								<VSCodeLink href="https://github.com/modelcontextprotocol" style={{ display: "inline" }}>
 									Model Context Protocol
 								</VSCodeLink>{" "}
-								enables communication with locally running MCP servers that provide additional tools and resources
-								to extend Cline's capabilities. You can use{" "}
+								은(는) Cline의 기능을 확장하기 위해 추가 도구 및 리소스를 제공하는 로컬에서 실행되는 MCP 서버와의 통신을 가능하게 합니다.{" "}
 								<VSCodeLink href="https://github.com/modelcontextprotocol/servers" style={{ display: "inline" }}>
-									community-made servers
+									커뮤니티에서 제작한 서버
 								</VSCodeLink>{" "}
-								or ask Cline to create new tools specific to your workflow (e.g., "add a tool that gets the latest
-								npm docs").{" "}
+								를 사용할 수 있으며, Cline에게 워크플로에 맞는 새로운 도구를 생성하도록 요청할 수도 있습니다 (예: "최신 npm 문서를 가져오는 도구 추가").{" "}
 								<VSCodeLink href="https://x.com/sdrzn/status/1867271665086074969" style={{ display: "inline" }}>
-									See a demo here.
+									데모를 여기에서 확인하세요.
 								</VSCodeLink>
 							</div>
 
@@ -136,7 +133,7 @@ const McpView = ({ onDone }: McpViewProps) => {
 										marginBottom: 20,
 										color: "var(--vscode-descriptionForeground)",
 									}}>
-									No MCP servers installed
+									설치된 MCP 서버가 없습니다
 								</div>
 							)}
 
